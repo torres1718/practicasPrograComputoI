@@ -1,17 +1,20 @@
 <template>
   <div id="app">
       <list-products title="List Products"/>
+      <!--cart-items :cartItems="cartItems" :itemCount="itemCount"/-->
     
   </div>
 </template>
 
 <script>
 import ListProducts from './components/ListProducts.vue'
+//import CartItems from './components/ListProducts.vue'
 
 export default {
   name: 'App',
   components: {
-    ListProducts
+    ListProducts,
+    //CartItems
   }
 }
 </script>

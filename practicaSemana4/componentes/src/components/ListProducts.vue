@@ -5,7 +5,7 @@
                 <span class="fs-4"><h1>{{title}}</h1></span>
                 <ul class="nav nav-pills">
                     <li>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fa fa-shopping-cart"></i>
                             <span class="badge bg-primary">{{itemCount}}</span>
                         </button>
@@ -62,7 +62,7 @@ export default{
         title:String
     },
     components:{
-        CartItems
+       CartItems
         
     },
     data(){
