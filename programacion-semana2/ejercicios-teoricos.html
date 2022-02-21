@@ -1,0 +1,264 @@
+<!--
+    Haciendo uso de directivas, represente los datos personales 
+    de cada integrante del equipo, aplique un estilo diferente
+    para cada caso.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ejercicios clase teorica</title>
+</head>
+<body>
+    <center><h1>INICIO DE EJERCICIO 1</h1></center>
+
+
+<div id="datos">
+
+     <center><i><p v-text="Titulo1"></p></i></center>
+     <br>
+
+     <center><p v-text="integrante1"></p></center>
+     <center><p v-text="nombre1"></p></center>
+     <center><p v-text="edad1"></p></center>
+     <center><p v-text="carrera1"></p></center>
+        <center><p v-text="correo1"></p></center>
+    </div>
+    <br>
+    <br>
+<div id="datos2">
+    <center><p v-text="integrante2"></p></center>
+    <center><p v-text="nombre2"></p></center>
+    <center><p v-text="edad2"></p></center>
+    <center><p v-text="carrera2"></p></center>
+    <center><p v-text="correo2"></p></center>
+</div>
+
+<!--Agregamos referencia a Vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+
+    let data={
+        Titulo1: 'Datos personales de los integrantes del equipo',
+        integrante1: 'Integrante 1',
+        nombre1: 'Nombre Completo: Jaqueline Iliana Avila Bonilla',
+        edad1: 'Edad: 19 años',
+        carrera1: 'Carrera: Ingenieria en Sistemas y Redes Informaticas',
+        correo1: 'Correo:smis950320@ugb.edu.sv',  
+    }
+
+    let data2={
+        integrante2: 'Integrante 2',
+        nombre2: 'Nombre Completo: Cristobal Josue Torres Hernandez',
+        edad2: 'Edad: 19 años',
+        carrera2: 'Carrera: Ingenieria en Sistemas y Redes Informaticas',
+        correo2: 'Correo:smis009220@ugb.edu.sv',  
+    }
+    //instancia nueva de vue
+    new Vue({
+        el: '#datos',
+        data: data,
+       
+    });
+
+    //instancia nueva de vue
+    new Vue({
+        el: '#datos2',
+        data: data2,
+       
+    });
+</script>
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--
+    Crear una variable que contenga codigo HTML que represente
+    los nombres de los integrantes con las etiquetas <h2> y 
+    texto en cursiva. Debera mostrarlo utilizando v-html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <br>
+    
+    
+    <center><h1>INICIO DE EJERCICIO 2</h1></center>
+<br>
+
+    <div id="Integrante1">
+        <center> <h2 v-html="name" ></h2></center>
+        
+      </div>
+    <div id="Integrante2">
+        <center>   <h2 v-html="name2"></h2></center>
+        
+     
+    </div>
+      
+    <!--Agregamos referencia a Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+
+      <script>
+
+          // Creando variables
+      new Vue({
+        // el: '#Integrante1', // id del div donde se va a trabajar
+        el: "#Integrante1",
+        data: {
+          name: "<i>Mi nombre es: Jaqueline Iliana Avila Bonilla</i> - SMIS950320"
+        },
+        methods: {
+            
+        }
+      })
+        // Creando variables
+        new Vue({
+        // el: '#Integrante2', // id del div donde se va a trabajar
+            el: "#Integrante2",
+            data: {
+            name2: "<i>Mi nombre es: Cristobal Josue Torres Hernandez</i> - SMIS009220"
+            },
+            methods: {
+                
+            }
+        })
+      
+      </script>
+      <br>
+      <br>
+      <br>
+      <br>
+            
+<!--Declarar un arreglo con datos de peliculas, nombre y año, mostrar contenido del array dentro de una lista-->
+<br>
+    
+    
+<center><h1>INICIO DE EJERCICIO 3</h1></center>
+
+<div id ="peli">
+    <center> <h1>CARTELERA DE PELICULAS</h1></center>
+   <ul>
+          <li v-for="item in peliculas">Nombre: {{item.nombre}}, año de lanzamiento: {{item.año}}</li>
+      </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>    
+//declarar arreglo con datos de peliculas, nombre y año, mostrar el contenido del arreglo dentro de una lista <ul>
+var peliculas = [
+  {
+      nombre: "Rapido y furiosos 8",
+      año: 2017
+  },
+  {
+      nombre: "Buscando a Nemo",
+      año: 2003
+  },
+  {
+      nombre: "Buscando a Dory",
+      año: 2016
+  },
+  {
+      nombre: "Toy Story",
+      año: 1995
+  },
+  {
+      nombre: "Toy Story 2",
+      año: 1999
+  },
+  {
+      nombre: "Toy Story 3",
+      año: 2010
+  },
+  {
+      nombre: "Cars",
+      año: 2006
+  },
+  {
+      nombre: "Cars 2",
+      año: 2011
+  },
+  {
+      nombre: "Cars 3",
+      año: 2017
+  },
+  {
+      nombre: "Plaza Sesamo",
+      año: 1972
+  },
+  {
+      nombre: "El transportador",
+      año: 2002
+  },
+  {
+      nombre: "Ratatouille",
+      año: 2007
+  },
+  {
+      nombre: "Rambo",
+      año: 2008
+  },
+  {
+      nombre: "Shrek",
+      año: 2001
+  },
+  {
+      nombre: "Cenicienta",
+      año: 1950
+  },
+  {
+      nombre: "Reservoir Dogs",
+      año: 1992
+  },
+  {
+      nombre: "Frozen",
+      año: 2013
+  },
+  {
+      nombre: "Gran Torino",
+      año: 2008
+  },
+  {
+      nombre: "Hachi: A Dog's Tale",
+      año: 2009
+  },
+  {
+      nombre: "Ocho apellidos",
+      año: 2014
+  },
+]
+
+new Vue({
+  el: "#peli",
+  data: {
+      peliculas: peliculas
+  }
+
+})
+
+</script>
+
+</body>
+</html>
